@@ -4,9 +4,15 @@
     width: 100%;
     height: 180px;
    margin: auto;
-   margin-top: 10px;
-   
-   
+   margin-top: 10px;  
+}
+.Opened{
+  border: 1px solid ;
+  box-shadow: brown;
+  width: 100%;
+  height: 250px;
+ margin: auto;
+ margin-top: 10px;  
 }
 img {
     width:30%;
@@ -35,4 +41,5 @@ button {
   width: 40%;
   margin: auto;
 }
+
 

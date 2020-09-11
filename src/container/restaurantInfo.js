@@ -1,5 +1,5 @@
 const allRestaurants = {
-    McDonnal : {
+    McDonnald : {
         location: "turku",
         dishes: {
             burger: {
