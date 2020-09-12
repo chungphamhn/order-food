@@ -1,4 +1,9 @@
-.boxed {
+.Dishes {
+    margin: auto;
+    width: 40%;
+}
+
+/*.boxed {
     border: 1px solid ;
     box-shadow: brown;
     width: 100%;
@@ -40,6 +45,6 @@ button {
   list-style-type: none;
   width: 40%;
   margin: auto;
-}
+}*/
 
 

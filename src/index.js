@@ -3,23 +3,19 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-
-import restaurantReducer from './store/reducers/restaurantInfo';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 
-const rootReducer = combineReducers({
-    restaurantInfo: restaurantReducer
-});
+//const rootReducer = combineReducers({
 
-const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
+//});
+
+//const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
 const app = (
-    <Provider store={store}>
-        <App />
-    </Provider>
+    <App />
 );
 
 ReactDOM.render(

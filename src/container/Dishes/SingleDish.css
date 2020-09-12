@@ -1,0 +1,8 @@
+.SingleDish {
+    border: 1px solid;
+}
+    .SingleDish img {
+        margin-left: 0;
+        width: 20%;
+        height: 30%;
+    }
