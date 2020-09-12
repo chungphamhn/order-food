@@ -1,50 +1,46 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import './Dishes.css';
 
 
 
-export const Dishes = (props) => {
-    // state = {
-    //     dishName: "Nachot",
-    //     dishPrice: 10,
-    //     dishQuantity: 2
-    // }
-    const [isClicked, setIsClicked] = useState(false);
-    const clickHandler = () => {
-        setIsClicked(true);
+export class Dishes extends Component {
+
+    clickHandler = () => {
+
     }
     
+    render() {
+
+        let isClicked = false;
+
         const Dishpic = require('../../assets/image/nacho.png');
-        
         let dish = (
-            <div key={props.Key} className= "boxed">
+            <div key={this.props.Key} className="boxed">
+
+                <img src={this.props.dishPic} alt='pics of Nachos' />
                 <div>
-                    <strong><button onClick ={clickHandler}>+</button></strong>
-                </div> 
-                <img src={props.dishPic} alt='pics of Nachos'/>
-                <div>
-                    <p className= "title"> <strong>{props.dishName}</strong></p>
-                    <p>{props.dishPrice}€</p>
+                    <p className="title"> <strong>{this.props.dishName}</strong></p>
+                    <p>{this.props.dishPrice}€</p>
                 </div>
             </div>
         );
 
-        
-        if (isClicked){
-            console.log('hii');
+
+        if (isClicked) {
+
             dish = (
-                <div key ={props.Key}className="Opened" >
+                <div key={this.props.Key} className="Opened" >
                     <div>
-                        <img src={props.dishPic} alt='pics of Nachos'/>
-                    </div> 
+                        <img src={this.props.dishPic} alt='pics of Nachos' />
+                    </div>
                     <div>
-                        <button>-</button> <button>+</button>
-                        <p>Count: {props.count}</p>
+
+                        <p>Count: {this.props.count}</p>
                     </div>
 
                     <div>
-                        <p className= "title"> <strong>{props.dishName}</strong></p>
-                        <p>{props.dishPrice}€</p>
+                        <p className="title"> <strong>{this.props.dishName}</strong></p>
+                        <p>{this.props.dishPrice}€</p>
                         <button>-</button>
                     </div>
                 </div>
@@ -52,9 +48,13 @@ export const Dishes = (props) => {
         }
 
         return (
-        <div>{dish}</div>
+            <div>
+                {dish}
+            </div>
 
         );
     }
-    
+
+}
+
 
