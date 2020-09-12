@@ -5,17 +5,18 @@ const allRestaurants = {
             burger: {
                 ingredient: ["bread", "meat", "salad"],
                 price: 10,
-                type: "burger"
+                type: "burger",
+                
             },
             big_mac: {
                 ingredient: ["bread", "meat", "salad"],
                 price: 10,
-                type: "burger"
+                type: "bigmac"
             },
             ice_cream: {
                 ingredient: ["ice cream"],
                 price: 10,
-                type: "drink"
+                type: "icecream"
             }
         }
     },

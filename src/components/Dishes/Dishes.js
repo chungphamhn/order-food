@@ -4,20 +4,22 @@ import './Dishes.css';
 
 
 export class Dishes extends Component {
-
-    clickHandler = () => {
-
+    state = {
+        isClicked : false
     }
-    
+    clickHandle = () => {
+        this.setState({isClicked : !this.state.isClicked});
+        
+    }
     render() {
 
-        let isClicked = false;
+        
 
-        const Dishpic = require('../../assets/image/nacho.png');
+        
         let dish = (
-            <div key={this.props.Key} className="boxed">
+            <div onClick={this.clickHandle} key={this.props.Key} className="boxed">
 
-                <img src={this.props.dishPic} alt='pics of Nachos' />
+                <img src={this.props.dishPic} alt = 'pics of burger' />
                 <div>
                     <p className="title"> <strong>{this.props.dishName}</strong></p>
                     <p>{this.props.dishPrice}€</p>
@@ -26,10 +28,10 @@ export class Dishes extends Component {
         );
 
 
-        if (isClicked) {
+        if (this.state.isClicked) {
 
             dish = (
-                <div key={this.props.Key} className="Opened" >
+                <div onClick={this.clickHandle}  key={this.props.Key} className="Opened" >
                     <div>
                         <img src={this.props.dishPic} alt='pics of Nachos' />
                     </div>
