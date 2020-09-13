@@ -14,12 +14,11 @@ class SingleDish extends Component {
 
         let dish = (
             <div onClick={this.clickHandle} key={this.props.Key} className="SingleDish">
-
-                <img src={this.props.dishPic} alt='pics of burger' />
                 <div>
-                    <p className="title"> <strong>{this.props.dishName}</strong></p>
-                    <p>Price: {this.props.dishPrice} Euro</p>
+                    <div className="title"><strong>{this.props.dishName}</strong></div>
+                    <div>Price: {this.props.dishPrice} Euro</div>
                 </div>
+                <img src={this.props.dishPic} alt='pics of burger' />
             </div>
         );
 
@@ -28,18 +27,17 @@ class SingleDish extends Component {
 
             dish = (
                 <div onClick={this.clickHandle} key={this.props.Key} className="SingleDish" >
-
-                    <img src={this.props.dishPic} alt='pics of Nachos' />
-
                     <div>
+                        <div className="title"><strong>{this.props.dishName}</strong></div>
+                        <div>
+                            count:
+                            <button>-</button>
+                            <button>+</button>
+                        </div>
 
-                        <p className="title"> <strong>{this.props.dishName}</strong></p>
-                        <p>count: </p>
-                        <button>-</button>           
-                        <button>+</button>    
                         <p>Price: {this.props.dishPrice} Euro</p>
-                        
                     </div>
+                    <img src={this.props.dishPic} alt='pics of Nachos' />
                 </div>
             );
         }
