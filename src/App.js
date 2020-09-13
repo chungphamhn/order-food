@@ -1,16 +1,17 @@
 import React from 'react';
-import SingleRestaurant from './container/Restaurants/SingleRestaurant';
+import AllRestaurants from './container/Restaurants/AllRestaurants';
+//import SingleRestaurant from './container/Restaurants/SingleRestaurant';
 import './App.css';
 
 function App() {
 
-  return (
+    return (
 
-      <div className="App">
-          <SingleRestaurant />
-    </div>
+        <div className="App">
+            <AllRestaurants />
+        </div>
 
-  );
+    );
 }
 
 export default App;

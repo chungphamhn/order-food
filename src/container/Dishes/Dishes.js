@@ -9,16 +9,18 @@ import './Dishes.css';
 class Dishes extends Component {
 
     render() {
-        const Mcdonald = (
-            Object.keys(Data["McDonnald"].dishes).map(
+
+        const dishesData = this.props.dishesData;
+        const showDishes = (
+            Object.keys(dishesData).map(
                 dish => {
                     let temp = dish.toUpperCase().replace("_", " ");
                     let pic = null;
-                    if (Data["McDonnald"].dishes[dish].type === "icecream") {
+                    if (dishesData[dish].type === "icecream") {
                         pic = pictures.icecreamPicture;
 
                     }
-                    else if (Data["McDonnald"].dishes[dish].type === "burger") {
+                    else if (dishesData[dish].type === "burger") {
                         pic = pictures.burgerPicture;
                     } else {
                         pic = pictures.bigmacPicture;
@@ -27,20 +29,18 @@ class Dishes extends Component {
 
                         <SingleDish
                             dishName={temp}
-                            Key={temp}
+                            key={temp}
                             dishPic={pic}
-                            dishPrice={Data["McDonnald"].dishes[dish].price}
+                            dishPrice={dishesData[dish].price}
                         />
                     );
                 }
             )
         )
         return (
-            <div className="Dishes" >
-                <ul>
-                    {Mcdonald}
-                </ul>
-               
+            <div >
+                {showDishes}
+
             </div>
         );
     }

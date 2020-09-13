@@ -28,7 +28,7 @@ const allRestaurants = {
                 price: 10,
                 type: "burger"
             },
-            big_mac: {
+            big_burger: {
                 ingredient: ["bread", "meat", "salad"],
                 price: 10,
                 type: "burger"
