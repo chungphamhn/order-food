@@ -1,6 +1,9 @@
 .Dishes {
+    display: flex;
+    flex-flow: column;
     margin: auto;
     width: 40%;
+    margin: auto;
 }
 
 /*.boxed {

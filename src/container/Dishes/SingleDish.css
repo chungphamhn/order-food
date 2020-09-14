@@ -1,7 +1,13 @@
 .SingleDish {
     display: flex;
     justify-content: space-between;
+
     border: 1px solid ;
+
+    align-items: center;
+    border: 1px solid;
+    margin: 5px 0;
+
 }
     .SingleDish img {
         width: 100px;
