@@ -1,5 +1,26 @@
-.restaurant {
+.single_restaurant_main_page {
+    position: relative;
+    display: grid;
+    padding: 0 30px;
+    margin: 45px auto 2rem;
+    grid-template-columns: 12% 10% 50% 10% 5%;
+}
 
-    margin-left: auto;
-    margin-right: auto;
+.all_dishes {
+
+    grid-column: 3;
+    /*display: flex;
+    flex-flow: column;
+    margin: auto;
+    width: 40%;
+    margin: auto;*/
+}
+
+.categories{
+    grid-column: 1;
+    grid-column-start: 1;
+}
+.venue_info {
+    grid-column: 5;
+    grid-column-end: 5;
 }
