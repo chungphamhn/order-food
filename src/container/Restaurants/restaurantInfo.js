@@ -36,7 +36,7 @@ const allRestaurants = {
             ice_cream: {
                 ingredient: ["ice cream"],
                 price: 10,
-                type: "drink"
+                type: "icecream"
             }
         }
     }
