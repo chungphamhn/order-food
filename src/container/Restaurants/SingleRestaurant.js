@@ -7,7 +7,6 @@ import './SingleRestaurant.css';
 class SingleRestaurant extends Component {
 
     render() {
-        //console.log(this.props.restaurantObject);
 
         const dishesData = this.props.restaurantObject["dishes"];
         
