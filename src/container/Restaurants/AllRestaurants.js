@@ -4,47 +4,61 @@ import { showSingleRestaurant } from '../../store/actions/displayRestaurantInfo'
 
 import SingleRestaurant from './SingleRestaurant';
 import RestaurantInfo from './restaurantInfo';
+import * as Logo from '../../assets/image/index';
 
 
 class AllRestaurants extends Component {
 
+    state = {
+        isInHomePage: true
+    }
 
     showRestaurantHandle = (restaurantName) => {
         this.props.onShowSingleRestaurant(restaurantName);
+        this.setState({ isInHomePage: false });
 
+    }
+
+    homeButton = () => {
+        this.setState({ isInHomePage: true });        
     }
 
     render() {
 
         let showSingleRestaurant = null;
-        if (this.props.res) {
+
+        if (!this.state.isInHomePage) {
             showSingleRestaurant = (
                 <SingleRestaurant
                     restaurantObject={this.props.res}
                     restaurantName={this.props.name}
                 />
             );
+
+        }
+        else {
+            showSingleRestaurant = Object.keys(RestaurantInfo).map(
+                restaurant => (
+                    <div key={restaurant} onClick={() => this.showRestaurantHandle(restaurant)}>
+                        <div>
+                            <img src={Logo[restaurant]} alt="logo" />
+                        </div>
+                        <div >
+                            {restaurant.toUpperCase().replace("_", " ")}
+                        </div>
+                        
+                    </div>
+
+                )
+            );
         }
 
-        //const allRestaurantObjects = Object.keys(RestaurantInfo).map(
-        //    restaurant => (
-        //        <SingleRestaurant
-        //            restaurantObject={RestaurantInfo[restaurant]}
-        //            restaurantName={restaurant.toUpperCase().replace("_", " ")}
-        //        />
-        //    )
-        //);
-
-        const showRestaurants = Object.keys(RestaurantInfo).map(
-            restaurant => (
-                <button onClick={() => this.showRestaurantHandle(restaurant)}>
-                    {restaurant.toUpperCase().replace("_", " ")}
-                </button>
-            )
-        );
         return (
             <div>
-                {showRestaurants}
+                <div>
+                    <button onClick={this.homeButton}>Home</button>
+                </div>
+
                 {showSingleRestaurant}
             </div>
         );
