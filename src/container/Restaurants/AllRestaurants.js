@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SingleRestaurant from './SingleRestaurant';
 import RestaurantInfo from './restaurantInfo';
+import allRestaurants from './restaurantInfo';
 
 class AllRestaurants extends Component {
 
@@ -14,6 +15,8 @@ class AllRestaurants extends Component {
                 />
             )
         );
+        console.log(allRestaurantObjects);
+        
 
         return (
             <div>

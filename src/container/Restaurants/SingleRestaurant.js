@@ -10,7 +10,7 @@ class SingleRestaurant extends Component {
         //console.log(this.props.restaurantObject);
 
         const dishesData = this.props.restaurantObject["dishes"];
-
+        
         return (
             <div>
                 <div>Restaurant Image</div>
@@ -25,6 +25,7 @@ class SingleRestaurant extends Component {
                 </div>
 
             </div>
+
         );
     }
 }

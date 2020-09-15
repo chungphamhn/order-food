@@ -4,6 +4,8 @@ import './SingleDish.css';
 
 
 class SingleDish extends Component {
+
+
     state = {
         isClicked: false,
         count: 0,
@@ -38,6 +40,25 @@ class SingleDish extends Component {
         this.setState({ isClicked: !this.state.isClicked });
     }
     render() {
+        const showIngredients = (
+            this.props.dishIngredients.map(
+                ingre => {
+                    let ing = "";
+                    if (this.props.dishIngredients.indexOf(ingre) === this.props.dishIngredients.length-1 ){
+                        ing = ingre;
+                    } 
+                    else {
+                        ing = ingre + ", ";
+                    }
+                    return (
+                        ing    
+                    )
+                  
+                }
+            )
+        );
+
+       
         let showCount = (
             <div>
                 <button className = "btn" onClick ={this.showAddButtonHandler}>Add to order</button>
@@ -57,6 +78,7 @@ class SingleDish extends Component {
                 <div>
                     <div className="title"><strong>{this.props.dishName}</strong></div>
                     <div className="price">€{this.props.dishPrice} </div>
+                    <div>{showIngredients}</div>
                 </div>
                     <img src={this.props.dishPic} alt='pics of burger' />
             </div>
@@ -69,13 +91,16 @@ class SingleDish extends Component {
                     <div onClick={this.clickHandle}><img src={this.props.dishPic} alt='pics of Nachos' /></div>
                     <div onClick={this.clickHandle}>
                         <div className="title"><strong>{this.props.dishName}</strong></div>
-                        <p className="price">€{this.props.dishPrice}</p>
+                        <div>{showIngredients}</div>
+                        <div className="price">€{this.props.dishPrice}</div>
+
                     </div>
                     {showCount}
                 </div>
             
             );
         }
+        
         return (
             <div>
                 {dish}
