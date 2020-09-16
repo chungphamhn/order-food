@@ -9,16 +9,27 @@ class SingleDish extends Component {
     state = {
         isClicked: false,
         count: 0,
-        showAddButton: true
+        showAddButton: true,
+        showPlusButton :true
+    }
+    showPlusButtonHandler = () => {
+        this.setState({
+            
+            showPlusButton: !this.state.showPlusButton,
+            count: this.state.count +1,
+            showAddButton: false
+        });
+
     }
     showAddButtonHandler = () => {
         this.setState({showAddButton: !this.state.showAddButton});
     }
     
     addDishHanle = () => {
-        this.setState(state => ({
-            count: state.count + 1
-        }));
+        this.setState({
+            
+            count: this.state.count + 1
+        });
     }
 
     minusDishHandle = () => {    
@@ -26,20 +37,23 @@ class SingleDish extends Component {
             this.setState(state => ({
                 count: state.count - 1
             }));
-        }
-        else if (this.state.count === 0){
-            this.setState(
-                {
+            if (this.state.count === 1){
+                this.setState ({
                     isClicked: !this.state.isClicked,
                     showAddButton: true
-                });
-         }
+
+                })
+            }
+        }
+        
+         
     }
 
      clickHandle = () => {
         this.setState({ isClicked: !this.state.isClicked });
     }
     render() {
+        console.log(this.state.count);
         const showIngredients = (
             this.props.dishIngredients.map(
                 ingre => {
@@ -57,7 +71,16 @@ class SingleDish extends Component {
                 }
             )
         );
-
+        
+        let plusButton = null;
+        if (!this.state.showPlusButton){
+            plusButton = <div>{this.state.count} X</div>
+            
+        }
+        if ( this.state.count === 0){
+            plusButton = (<div><button onClick={this.showPlusButtonHandler} className = "plusbtn">+</button></div>)
+        
+        }
        
         let showCount = (
             <div>
@@ -65,9 +88,9 @@ class SingleDish extends Component {
             </div>
         );
 
-        if (!this.state.showAddButton){
+        if (!this.state.showAddButton ){
             showCount = (
-               <div> count: {this.state.count}
+               <div> Quantity: {this.state.count}
                     <button onClick = {this.minusDishHandle}>-</button>
                     <button onClick = {this.addDishHanle}>+</button>
                 </div>
@@ -75,12 +98,17 @@ class SingleDish extends Component {
         }
         let dish = (
             <div onClick={this.clickHandle} key={this.props.Key} className="SingleDish">
+                {plusButton}
                 <div>
+                    
                     <div className="title"><strong>{this.props.dishName}</strong></div>
                     <div className="price">€{this.props.dishPrice} </div>
                     <div>{showIngredients}</div>
                 </div>
+                <div>
                     <img src={this.props.dishPic} alt='pics of burger' />
+                </div>
+                    
             </div>
         );
        
