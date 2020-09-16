@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { showSingleRestaurant } from '../../store/actions/displayRestaurantInfo';
 
+import Aux from '../../hoc/A_U_X';
 import SingleRestaurant from './SingleRestaurant';
 import RestaurantInfo from './restaurantInfo';
+import Toolbar from '../../components/Toolbar/Toolbar';
+import './AllRestaurants.css';
 import * as Logo from '../../assets/image/index';
 
 
@@ -16,10 +19,9 @@ class AllRestaurants extends Component {
     showRestaurantHandle = (restaurantName) => {
         this.props.onShowSingleRestaurant(restaurantName);
         this.setState({ isInHomePage: false });
-
     }
 
-    homeButton = () => {
+    returnHomeHandler = () => {
         this.setState({ isInHomePage: true });        
     }
 
@@ -54,13 +56,14 @@ class AllRestaurants extends Component {
         }
 
         return (
-            <div>
-                <div>
-                    <button onClick={this.homeButton}>Home</button>
-                </div>
+            <Aux>
+                <Toolbar Clicked={this.returnHomeHandler} />
 
-                {showSingleRestaurant}
-            </div>
+                <main className="mainPage">
+                    {showSingleRestaurant}
+                </main>
+
+            </Aux>
         );
     }
 }

@@ -1,0 +1,37 @@
+
+.Toolbar {
+    height: 5%;
+    width: 100%;
+    top: 5px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Logo {
+    margin-left: 105px;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+.Login {
+    margin-right: 105px;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.Logo:hover, .Login:hover {
+    color: dodgerblue;
+}
