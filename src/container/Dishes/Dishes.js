@@ -8,9 +8,12 @@ import './Dishes.css';
 
 class Dishes extends Component {
 
+    
     render() {
+        
 
         const dishesData = this.props.dishesData;
+        
         const showDishes = (
             Object.keys(dishesData).map(
                 dish => {
@@ -32,6 +35,8 @@ class Dishes extends Component {
                             key={temp}
                             dishPic={pic}
                             dishPrice={dishesData[dish].price}
+                            dishIngredients={dishesData[dish].ingredient}
+                            
                         />
                     );
                 }

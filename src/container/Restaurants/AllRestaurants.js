@@ -5,6 +5,9 @@ import { showSingleRestaurant } from '../../store/actions/displayRestaurantInfo'
 import Aux from '../../hoc/A_U_X';
 import SingleRestaurant from './SingleRestaurant';
 import RestaurantInfo from './restaurantInfo';
+
+import allRestaurants from './restaurantInfo';
+
 import Toolbar from '../../components/Toolbar/Toolbar';
 import './AllRestaurants.css';
 import * as Logo from '../../assets/image/index';
@@ -37,6 +40,7 @@ class AllRestaurants extends Component {
                 />
             );
 
+
         }
         else {
             showSingleRestaurant = Object.keys(RestaurantInfo).map(
@@ -53,6 +57,7 @@ class AllRestaurants extends Component {
 
                 )
             );
+
         }
 
         return (

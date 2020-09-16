@@ -10,7 +10,7 @@ class SingleRestaurant extends Component {
     render() {
 
         const dishesData = this.props.restaurantObject["dishes"];
-
+        
         return (
             <div>
                 <div><img src={Logo[this.props.restaurantName]} /></div>
@@ -25,6 +25,7 @@ class SingleRestaurant extends Component {
                 </div>
 
             </div>
+
         );
     }
 }
