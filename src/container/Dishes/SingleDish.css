@@ -1,17 +1,20 @@
 .SingleDish {
     display: flex;
-    justify-content: space-between;
-
-    border: 1px solid ;
-
-    align-items: center;
-    border: 1px solid;
+    
+    border-color: white;
+    border-style: solid;
     margin: 5px 0;
+    position: relative;
+    width: 400px;
+    height: 200px;
 
 }
     .SingleDish img {
+        
+        position: absolute;
         width: 100px;
         height: 95px;
+        
     }
 .SingleDishOpen {
     display: block;
@@ -31,4 +34,9 @@ img {
     }
 .price{
     color:  #29ade5;
+}
+.plusbtn {
+    font-weight: bolder;
+    border: none;
+    background-color:white;
 }
